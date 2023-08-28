@@ -31,18 +31,18 @@ function draw()
   
   fill(0);
 
+  //box
   push();
   translate(x1 - camX, y1 - camY, z1 - camZ);
-    box(boxWidth, boxHeight, boxDepth);
-    pop();
+  box(boxWidth, boxHeight, boxDepth);
+  pop();
 
-    translate(-camX, -camY, -camZ);
+  translate(-camX, -camY, -camZ);
     
+  //vægge
   noStroke();
-
   texture(image);
 
-    //kasse
   push();
   translate(-200,0);
   rotateY(90);
@@ -74,37 +74,38 @@ function draw()
   pop();
 
 
-    //tastatur
-  if(keyIsDown(65))
+  //tastatur
+  if(keyIsDown(65)) //A
   {
     camX -= speed;
   }
 
-  if(keyIsDown(68))
+  if(keyIsDown(68)) //D
   {
     camX += speed;
   }
 
-  if(keyIsDown(87))
+  if(keyIsDown(87)) //W
   {
     camY -= speed;
   }
 
-  if(keyIsDown(83))
+  if(keyIsDown(83)) //S
   {
     camY += speed;
   }
 
-  if(keyIsDown(38))
+  if(keyIsDown(38)) //PilOp
   {
     camZ -= speed;
   }
 
-  if(keyIsDown(40)){
+  if(keyIsDown(40)) //PilNed
+  {
     camZ += speed;
   }
 
-  if(reset == true)
+  if(reset == true) //Spawn box
   {
     x1 = random(-200,200);
     y1 = random(-200,200);
@@ -115,7 +116,7 @@ function draw()
 
   z1 = z1 + speed;
 
-  if (z1 >= 400)
+  if (z1 >= 400) //Send box tilbage
   {
     reset = true;
   }
