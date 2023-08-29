@@ -121,5 +121,3 @@ function draw()
     reset = true;
   }
 }
-
-  
